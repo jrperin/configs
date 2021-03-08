@@ -10,28 +10,28 @@ sudo apt-get install -y build-essential tk-dev libncurses5-dev libncursesw5-dev 
 
 # Download Python
 echo "Removendo pasta e download antigo..."
-rm Python-3.8.0.tgz
-rm -rf Python-3.8.0 
+rm Python-3.8.8.tar.xz
+rm -rf Python-3.8.8 
 
 echo "Download python3.8..."
-wget https://www.python.org/ftp/python/3.8.0/Python-3.8.0.tgz
+wget https://www.python.org/ftp/python/3.8.8/Python-3.8.8.tar.xz
 
 # Install Python 3.8
-echo "Install Python 3.8"
-sudo tar zxf Python-3.8.0.tgz
-cd Python-3.8.0
+echo "Install Python 3.8.8"
+sudo tar xf Python-3.8.8.tar.xz
+cd Python-3.8.8
 sudo ./configure --enable-optimizations
-sudo make -j `nproc`
-sudo make altinstall
+sudo make 
+sudo make install
 
 echo "Checking Python version..."
-python3.8 -V
+python3 --version
 
 
 echo "Acertando links simbolicos..."
-sudo rm /usr/bin/python3 /usr/bin/python
-ln -s /usr/bin/python3.8 /usr/bin/python3
-ln -s /usr/bin/python3   /usr/bin/python
+# sudo rm /usr/bin/python3 /usr/bin/python
+# ln -s /usr/bin/python3.8 /usr/bin/python3
+# ln -s /usr/bin/python3   /usr/bin/python
 
 ls -la /usr/bin/python*
 
