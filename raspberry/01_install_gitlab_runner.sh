@@ -38,7 +38,7 @@ echo "Running GitLab package script..."
 curl -L https://packages.gitlab.com/install/repositories/runner/gitlab-runner/script.deb.sh | sudo bash
 
 echo "Installing GitLab runner..."
-sudo apt- install -y gitlab-runner
+sudo apt install -y gitlab-runner
 
 echo "You need to reboot the system befor go ahead"
 echo "sudo shutdown -r now"
